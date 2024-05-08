@@ -73,7 +73,7 @@ export const StationContext = createContext();
    
     fetchData();
 
-  }, [IsLoginIn]);
+  }, []);
 
 
 

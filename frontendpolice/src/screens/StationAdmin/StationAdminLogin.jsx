@@ -28,13 +28,16 @@ function StationAdminLogin() {
       body: JSON.stringify({  emp_id: formData.emp_id, password: formData.password, station_no: formData.station_no })
 
     })
-    // console.log("body ",JSON.stringify());
     const json = await response.json()
     console.log(json);
    
     if(json.success){
 
-      navigate("/station/Createfir")
+      localStorage.setItem("emp_id" ,formData.emp_id )
+      localStorage.setItem("station_no" ,formData.station_no )
+
+
+      navigate("/StationPanel/CreateFir" );
 
     }else{
       alert(json.errors)
