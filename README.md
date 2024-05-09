@@ -11,7 +11,12 @@ after this you must add your mysql host name and password in backend/connection_
 you must have AWS account for S3 bucket and add sensitive info into .env folder like secret key bucket name region name 
 
 # packages
- goes to backend dir and frontend dir and run
+ go to backend dir and  run
 
- npm install 
+npm install && npm run start-watch
+
+go to frontend dir and
+
+npm install && npm start
+
  

@@ -1,13 +1,13 @@
-import React ,{useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 // import FileUpload from "./screens/FileUpload";
 // import { useWeavy, WyFiles } from "@weavy/uikit-react";
 // import { useWeavy, WyFiles } from "../node_modules/@weavy/uikit-react";
 
 import {
-  BrowserRouter ,
+  BrowserRouter,
   Routes,
-  Route   ,
-   Outlet,
+  Route,
+  Outlet,
 } from "react-router-dom";
 
 import Landingpage from "./screens/Landingpage";
@@ -32,6 +32,9 @@ import Filessss from "./screens/DatabaseAdmin/Filessss";
 import GetPic from "./screens/DatabaseAdmin/GetPic";
 import TransferEmployee from "./screens/DatabaseAdmin/TransferEmployee";
 import EmpProfile from "./components/EmpProfile";
+import  StationDashboard from "./screens/StationAdmin/Dashboard";
+
+import StationPanelLayout from "./screens/StationAdmin/StaionPanelLayout";
 
 // import {DashboardDataBaseAdmin} from "./screens/DatabaseAdmin/SidebarDatabase"; 
 
@@ -39,62 +42,59 @@ import EmpProfile from "./components/EmpProfile";
 
 function App() {
   return (
-  
+
 
     <BrowserRouter>
       <Routes>
 
 
-          <Route index exact path="/" element={<Landingpage />}/>
-          <Route index exact path="/file" element={<Filessss />}/>
-          <Route index exact path="/getPic" element={<GetPic />}/>
+        <Route index exact path="/" element={<Landingpage />} />
+        <Route index exact path="/file" element={<Filessss />} />
+        <Route index exact path="/getPic" element={<GetPic />} />
 
-          <Route exact path="page/" element={<CombineLogin/>} >
-          <Route exact path="Stationlogin" element={<StationAdminLogin />} /> 
-          <Route exact path="Administationlogin" element={<DatabaseAdminLogin />} /> 
-          </Route>
-         
+        <Route exact path="page/" element={<CombineLogin />} >
+          <Route exact path="Stationlogin" element={<StationAdminLogin />} />
+          <Route exact path="Administationlogin" element={<DatabaseAdminLogin />} />
+        </Route>
 
-          <Route exact path="/SideBar/" element={ <AppLayoutForAdministrator/> }> 
-          <Route exact path="dashboard" element={<Dashboard />} /> 
-          <Route exact path="employee" element={<Employee />} />    
-          <Route exact path="createEmployee" element={<CreateEmployee />} /> 
-          <Route exact path="updateEmployee" element={<UpdateEmployee />} />   
-          <Route exact path="EmpProfile" element={<EmpProfile />} /> 
+        {/*  this is routes of Database admin panel */}
+        <Route exact path="/SideBar/" element={<AppLayoutForAdministrator />}>
+          <Route exact path="dashboard" element={<Dashboard />} />
+          <Route exact path="employee" element={<Employee />} />
+          <Route exact path="createEmployee" element={<CreateEmployee />} />
+          <Route exact path="updateEmployee" element={<UpdateEmployee />} />
+          <Route exact path="EmpProfile" element={<EmpProfile />} />
 
-          <Route exact path="DatabaseAdmins" element={<DatabaseAdmins />} /> 
-          <Route exact path="fir" element={<DatabaseFirs />} /> 
-          <Route exact path="stationData" element={<Stations />} /> 
-          <Route exact path="assignDuty" element={<AssignDuty />} /> 
-          <Route exact path="stationsadminData" element={<StationsAdmins />} /> 
-          <Route exact path="Transfer" element={<TransferEmployee />} /> 
+          <Route exact path="DatabaseAdmins" element={<DatabaseAdmins />} />
+          <Route exact path="fir" element={<DatabaseFirs />} />
+          <Route exact path="stationData" element={<Stations />} />
+          <Route exact path="assignDuty" element={<AssignDuty />} />
+          <Route exact path="stationsadminData" element={<StationsAdmins />} />
+          <Route exact path="Transfer" element={<TransferEmployee />} />
+          <Route path="*" element={<div>Default Page Content for /SideBar</div>} />
+        </Route>
 
-
-          <Route path="*" element={<div>Default Page Content for /SideBar</div>} /> 
-            </Route>  
-
-
+        {/* this is route of station admin panel */}
 
 
-          <Route exact path="/station/Createfir" element={<CreateFir />} /> 
-          <Route  exact path="*" element={<div>Default Page Content</div>} />
+        <Route exact path="/StationPanel/" element={ <StationPanelLayout/>}>
 
+        <Route exact path="Stationdashboard" element={<StationDashboard />} />
+        {/* <Route exact path="ViewFir" element={<CreateFir/>} />
+        <Route exact path="DelFir" element={<CreateFir/>} /> */}
+        <Route exact path="CreateFir" element={<CreateFir/>} />
+        {/* <Route exact path="KillFir" element={<CreateFir/>} /> */}
+        <Route exact path="*" element={<div>Default Page Content not Found any thing</div>} />
 
-
-       
-
-
-
-          </Routes> 
-     
+        </Route>
 
 
 
-    
+      </Routes>
 
-  
+
     </BrowserRouter>
- 
+
 
   );
 }
