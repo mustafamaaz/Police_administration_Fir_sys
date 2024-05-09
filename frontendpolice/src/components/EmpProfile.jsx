@@ -88,7 +88,7 @@ export default function EmpProfile() {
 
 
 
-
+{console.log("emp pic is  ::   " ,imageUrl )}
 
 <div class="flex justify-center mt-5 mb-10">
                         {/* <img  src="https://source.unsplash.com/random/900×700/?fruit" alt="Extra large avatar" /> */}

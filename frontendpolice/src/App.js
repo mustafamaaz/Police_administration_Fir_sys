@@ -35,6 +35,9 @@ import EmpProfile from "./components/EmpProfile";
 import  StationDashboard from "./screens/StationAdmin/Dashboard";
 
 import StationPanelLayout from "./screens/StationAdmin/StaionPanelLayout";
+import ViewFir from "./screens/StationAdmin/ViewFir";
+import PicDisplay from "./components/PicDisplay";
+import FirDisplay from "./components/FirDisplay";
 
 // import {DashboardDataBaseAdmin} from "./screens/DatabaseAdmin/SidebarDatabase"; 
 
@@ -80,10 +83,14 @@ function App() {
         <Route exact path="/StationPanel/" element={ <StationPanelLayout/>}>
 
         <Route exact path="Stationdashboard" element={<StationDashboard />} />
-        {/* <Route exact path="ViewFir" element={<CreateFir/>} />
-        <Route exact path="DelFir" element={<CreateFir/>} /> */}
+        <Route exact path="ViewFir" element={<ViewFir/>} />
+        <Route exact path="DelFir" element={<CreateFir/>} /> 
+
         <Route exact path="CreateFir" element={<CreateFir/>} />
-        {/* <Route exact path="KillFir" element={<CreateFir/>} /> */}
+        <Route exact path="KillFir" element={<CreateFir/>} />
+        <Route exact path="Photo" element={<PicDisplay/>} />
+        <Route exact path="pdf" element={<FirDisplay/>} />
+
         <Route exact path="*" element={<div>Default Page Content not Found any thing</div>} />
 
         </Route>

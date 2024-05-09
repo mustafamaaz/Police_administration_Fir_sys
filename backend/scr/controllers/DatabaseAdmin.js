@@ -100,6 +100,8 @@ async function  handleToGetProfilePic (req, res){
         const getCmd = new GetObjectCommand(GetObjectParams);
         const url =  await  getSignedUrl(s3,getCmd,{expiresIn:3600})
         const imageUrl = url
+
+        console.log("emp pic is " , imageUrl);
         
         
       return res.status(200).json({ success : true ,  imageUrl : imageUrl} );
